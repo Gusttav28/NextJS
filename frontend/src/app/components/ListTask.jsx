@@ -18,8 +18,7 @@ async function listTask() {
         console.log(id)
     }
     return(
-        <div className="bg-slate-950 p-4 w-full">
-            <h1>This is list task</h1>
+        <div className="bg-slate-950 p-7 w-full">
             {task.map((task) =>(
                 <TaskCard task={task} key={task.id}/>
             ))}                        

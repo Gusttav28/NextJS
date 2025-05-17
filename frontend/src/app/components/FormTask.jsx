@@ -27,21 +27,23 @@ function FormTask(){
     }
 
     return(
-        <div className="bg-slate-700 p-7 h-fit">
-             <form action="" onSubmit={handleSubmit}>
-                <h1 className="text-white">Add task</h1>
+        <div className="bg-slate-950 p-7 h-fit">
+            <div className="bg-slate-700 p-7 rounded-md h-fit">
+                <form action="" onSubmit={handleSubmit}>
+                    <h1 className="text-white">Add task</h1>
 
-                <label htmlFor="title" className="text-xs text-white">Title:</label>
-                <input type="text" name="title" 
-                className="bg-slate-50 rounded-md p-2 mb-2 block w-f  ull, text-slate-900" onChange={e => setTitle(e.target.value)}/>
+                    <label htmlFor="title" className="text-xs text-white">Title:</label>
+                    <input type="text" name="title" 
+                    className="bg-slate-50 rounded-md p-2 mb-2 block w-full, text-slate-900" onChange={e => setTitle(e.target.value)}/>
 
-                <label htmlFor="title" className="text-xs text-white">Description</label>
-                <textarea name="description" className="bg-slate-50 rounded-md p-2 mb-2 block w-f  ull, text-slate-900" onChange={e => setDescription(e.target.value)}></textarea>    
-
-                <button className="text-white bg-blue-700 rounded-md p-2 block  w-full">
-                    Save
-                </button>
-             </form>
+                    <label htmlFor="title" className="text-xs text-white">Description</label>
+                    <textarea name="description" className="bg-slate-50 rounded-md p-2 mb-2 block w-full, text-slate-900" onChange={e => setDescription(e.target.value)}></textarea>    
+        
+                    <button className="text-white bg-blue-700 rounded-md p-2 block w-full">
+                        Save
+                    </button>
+                </form>
+            </div>
         </div>
     )   
 }
