@@ -1,6 +1,8 @@
 "use client"
 import { useRouter } from "next/navigation"
 import { useState } from 'react'
+// import { mutate } from "swr"
+
 
 
 function TaskCard({task}) {
@@ -56,6 +58,7 @@ function TaskCard({task}) {
             window.confirm("Err status - Sorry try again")
         }
         console.log(res)
+
     }
 
 
@@ -67,37 +70,60 @@ function TaskCard({task}) {
         <div className="flex flex-col"  >
             {
                 !edit ? (
-                    <h1 className="text-white">{title} {task.done && <span>✅</span>}</h1>
+                    <div className="mb-5">
+                        <label htmlFor="title" className="text-xs text-white block mb-1">Title:</label>
+                        <h1 className="text-white">{title}</h1>
+                    </div>
                     
                 ) : (
-                    <input onChange={e => setNewTitle(e.target.value)} className="border-none outline-none text-green-400" type="text" placeholder={task.title}/>    
+                    <div className="mb-5">
+                        <label htmlFor="title" className="text-xs text-white block mb-1">Title:</label>
+                        <input onChange={e => setNewTitle(e.target.value)} className="border-none outline-none text-green-400" type="text" placeholder={task.title}/>    
+
+                    </div>
 
                 )
             }
             {
                 !edit ? (
-                    <p className="text-white">{description}</p>
+                    <div className="mb-5">
+                         <label htmlFor="title" className="text-xs text-white block mb-1">Description:</label>
+                        <p className="text-white">{description}</p>
+                    </div>
                 ) : ( 
-                    <textarea onChange={e => setNewDescription(e.target.value)} className="border-none outline-none text-green-400 w-full" placeholder={task.description} ></textarea>  
+                    <div className="mb-5">
+                        <label htmlFor="title" className="text-xs text-white block mb-1">Description:</label>
+                        <textarea onChange={e => setNewDescription(e.target.value)} className="border-none outline-none text-green-400 w-full" placeholder={task.description} ></textarea>  
+                    </div>
+                )
+            }
+            {
+                !edit ? (
+                    <div className="mb-1">
+                         <label htmlFor="title" className="text-xs text-white block mb-1">Done:</label>
+                         <h1 className="text-white transition-discrete">{task.done && <span>✅</span>}</h1>
+                    </div>
+                ) : ( 
+                    <h1 className="text-white transition-discrete">{task.done && <span>✅</span>}</h1>
                 )
             }
 
         </div>
-        <div className="flex justify-between gap-x-2">
+        <div className="flex flex-col md:flex-row justify-between gap-2 mt-2">
             {edit && (
-                <button className="text-black bg-slate-300 rounded-md p-2" onClick={() => handleUpdate(task.id)}>Save Changes</button>
+                <button className="text-black bg-slate-300 rounded-md p-2 delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-slate-100 ..." onClick={() => handleUpdate(task.id)}>Save Changes</button>
             )}
             <button className={
-                "text-white rounded-md p-2" + (task.done ? "bg-slate-950" : " bg-green-500")
+                "text-white rounded-md p-2 delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-slate-400 ..." + (task.done ? "bg-slate-950" : " bg-green-500")
             } onClick={() => handleTaskDone(task.id)}>
                 
                 {task.done ? "Unkdone" : "Done"}
             </button>
-            <button className="text-white bg-sky-600 rounded-md p-2" onClick={() => setEdit(!edit)}>
+            <button className="text-white bg-sky-600 rounded-md p-2 delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-sky-400 ..." onClick={() => setEdit(!edit)}>
                 Update
             </button> 
-            <button className="text-white bg-red-700 rounded-md p-2" onClick={() => handleDelete(task.id)}>
-                Delete
+            <button className="text-white bg-red-700 rounded-md p-2 delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-500 ..." onClick={() => handleDelete(task.id)}>
+                Delete  
             </button>
         </div>
     </div>
