@@ -12,7 +12,7 @@ function TaskCard({task}) {
     const [title, setNewTitle] = useState(task.title);
     const [description, setNewDescription] = useState(task.description)
 
-    
+    const tasklist = [task]
 
     const handleDelete = async (id) => {
         console.log(id)
@@ -58,6 +58,7 @@ function TaskCard({task}) {
             window.confirm("Err status - Sorry try again")
         }
         console.log(res)
+        console.log("This is the task list: ", tasklist)
 
     }
 

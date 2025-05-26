@@ -2,8 +2,8 @@
 // import { useRouter } from "next/router"
 // import { useState } from "react"
 // import { useTask } from "./useTask";
+import Tasklistt from "../tasklist/page";
 import TaskCard from "./TaskCard";
-
 
 async function loadTask() { 
     const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/task/`)
@@ -15,9 +15,6 @@ async function ListTask() {
     const task =  await loadTask()
     console.log(task)
 
-    const handleDelete = (id) => {
-        console.log(id)
-    }
     // const {task, isLoading, isError, mutate } = useTask()
     // if (isLoading) return <p className="text-white">Loading...</p>
     // if (isError) return <p className="text-white">Failed to load the task</p>
