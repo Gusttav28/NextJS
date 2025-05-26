@@ -20,17 +20,6 @@ export const metadata: Metadata = {
 };
 
 
-export function Header() {
-  return(
-      <div>
-        <nav>
-          <NavBar />
-        </nav>
-      </div>
-  )
-}
-
-
 
 
 
@@ -45,7 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-900 text-white min-h-screen`}
       >
         <div className="container mx-auto px-4 md:px-8 lg:px-16 py-8">
-          <Header />
+          <NavBar />
           {children}
         </div>
       </body>
