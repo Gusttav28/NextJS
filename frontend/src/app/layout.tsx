@@ -22,13 +22,11 @@ export const metadata: Metadata = {
 
 export function Header() {
   return(
-    <header>
       <div>
         <nav>
           <NavBar />
         </nav>
       </div>
-    </header>
   )
 }
 
