@@ -17,14 +17,17 @@ export default function NavBar() {
   
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-6">
-            <a href="/" className="hover:text-slate-300 transition">Tasks</a>
-            <a href="/tasklist" className="hover:text-slate-300 transition">List</a>
-            <a href="/about" className="hover:text-slate-300 transition">About</a>
-            <a href="/contact" className="hover:text-slate-300 transition">Contact</a>
+            <a href="/" className="rounded-2xl hover:bg-amber-50 hover:text-gray-950 hover:scale-105 transition-transform">Tasks</a>
+
+            <a href="/tasklist" className="rounded-2xl hover:bg-amber-50 hover:text-gray-950 hover:scale-105 transition-transform">List</a>
+
+            <a href="/about" className="rounded-2xl hover:bg-amber-50 hover:text-gray-950 hover:scale-105 transition-transform">About</a>
+            
+            <a href="/contact" className="rounded-2xl hover:bg-amber-50 hover:text-gray-950 hover:scale-105 transition-transform">Contact</a>
           </div>
   
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={toggleMenu}>
+          <button className="md:hidden rounded-2xl hover:bg-amber-50 hover:text-gray-950 hover:scale-105 transition-transform" onClick={toggleMenu}>
             {isOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -32,10 +35,10 @@ export default function NavBar() {
          {/* Mobile Links */}
         {isOpen && (
             <div className="md:hidden mt-4 flex flex-col space-y-4 bg-[#111] p-4 rounded-lg">
-            <a href="/" className="hover:text-slate-300 transition">Tasks</a>
-            <a href="/tasklist" className="hover:text-slate-300 transition">List</a>
-            <a href="/about" className="hover:text-slate-300 transition">About</a>
-            <a href="/contact" className="hover:text-slate-300 transition">Contact</a>
+            <a href="/" className="rounded-2xl hover:bg-amber-50 hover:text-gray-950 hover:scale-105 transition-transform">Tasks</a>
+            <a href="/tasklist" className="rounded-2xl hover:bg-amber-50 hover:text-gray-950 hover:scale-105 transition-transform">List</a>
+            <a href="/about" className="rounded-2xl hover:bg-amber-50 hover:text-gray-950 hover:scale-105 transition-transform">About</a>
+            <a href="/contact" className="rounded-2xl hover:bg-amber-50 hover:text-gray-950 hover:scale-105 transition-transform">Contact</a>
             </div>
         )}
       </nav>

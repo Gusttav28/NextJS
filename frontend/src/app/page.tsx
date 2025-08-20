@@ -2,6 +2,7 @@ import FormTask from "./components/FormTask";
 import ListTask from "./components/ListTask";
 import Rotate from "./components/Motion";
 export const dynamic = "force-dynamic"
+import NavBar from "./components/NavBar"
 
 function HomePage() {
   return(
@@ -35,6 +36,9 @@ function HomePage() {
       <div className="flex flex-col md:flex-row gap-10">
         <FormTask/>
         <ListTask/>
+      </div>
+      <div>
+        {/* <NavBar/> */}
       </div>
     </div>
   )
