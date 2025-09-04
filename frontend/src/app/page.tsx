@@ -2,7 +2,6 @@ import FormTask from "./components/FormTask";
 import ListTask from "./components/ListTask";
 import Rotate from "./components/Motion";
 export const dynamic = "force-dynamic"
-import NavBar from "./components/NavBar"
 
 function HomePage() {
   return(
