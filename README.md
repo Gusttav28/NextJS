@@ -31,8 +31,7 @@ Backend: Django, Django REST Framework, MySQL
 Others: Axios (API communication), GitHub (version control)
 
 
-# Install dependencies:
-
+# 🦾 Install dependencies:
 
 Navigate to the frontend folder and install dependencies:
 
